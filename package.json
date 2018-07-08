@@ -37,7 +37,9 @@
   },
   "scripts": {
     "test": "scripts/collection.js validate -q",
-    "deploy": "scripts/deploy.js && scripts/deployRss.js && ./scripts/deploy_badges.js"
+    "deploy": "scripts/deploy.js && scripts/deployRss.js && ./scripts/deploy_badges.js",
+    "heroky-postinstall": "npm run deploy",
+    "start": "http-server deploy"
   },
   "devDependencies": {
     "dredd": "^4.7.0"
