@@ -29,7 +29,7 @@ function deployDir(path) {
 
 function rootUrl(url) {
   assert(_.isString(url) && url[0] !== '/');
-  return URI('https://romainmeunier.github.io/v2/' + url).href();
+  return URI('https://romainmeunier.github.io/openapi-directory/v2/' + url).href();
 }
 
 var apisGuruSwagger = util.readYaml('resources/apis_guru_swagger.yaml');
