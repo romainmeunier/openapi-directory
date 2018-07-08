@@ -4,6 +4,7 @@ info:
   version: v4
   title: VPPartner.Member.Api V4
   description: ''
+  x-providerName: partners
 paths:
   "/{partner}/member/{email}":
     get:
