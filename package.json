@@ -41,7 +41,7 @@
     "testor": "scripts/collection.js validate -q",
     "buildfull": "scripts/deploy.js && scripts/deployRss.js && ./scripts/deploy_badges.js",
     "build": "scripts/deploy.js",
-    "deploy": "deploy-to-gh-pages ./deploy",
+    "deploy": "deploy-to-gh-pages --repo romainmeunier/openapi-directory ./deploy",
     "start": "http-server deploy"
   },
   "devDependencies": {
