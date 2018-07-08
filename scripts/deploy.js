@@ -83,11 +83,11 @@ function buildApiList(specs) {
       var swagger = specs[filename];
 
       var logoUrl = _.get(swagger, 'info["x-logo"].url');
-      if (logoUrl) {
-        if (!cachedLogo[logoUrl])
-          cachedLogo[logoUrl] = yield cacheLogo(logoUrl);
-        swagger.info['x-logo'].url = cachedLogo[logoUrl];
-      }
+      // if (logoUrl) {
+        // if (!cachedLogo[logoUrl])
+          // cachedLogo[logoUrl] = yield cacheLogo(logoUrl);
+        // swagger.info['x-logo'].url = cachedLogo[logoUrl];
+      // }
 
       _.defaults(swagger.info, {'x-preferred': true});
 
