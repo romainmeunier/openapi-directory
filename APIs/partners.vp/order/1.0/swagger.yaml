@@ -1,5 +1,6 @@
 ---
 swagger: '2.0'
+host: order.dev.ptn.chrysalis.dc1.fr.vpgrp.io
 info:
   version: v4
   title: VPPartner.Order.Api V4

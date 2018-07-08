@@ -1,5 +1,6 @@
 ---
 swagger: '2.0'
+host: member.dev.ptn.chrysalis.dc1.fr.vpgrp.io 
 info:
   version: v4
   title: VPPartner.Member.Api V4
