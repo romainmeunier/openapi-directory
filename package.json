@@ -38,8 +38,9 @@
   "scripts": {
     "test": "scripts/collection.js validate -q",
     "testor": "scripts/collection.js validate -q",
-    "deploy": "scripts/deploy.js && scripts/deployRss.js && ./scripts/deploy_badges.js",
-    "heroku-postbuild": "scripts/deploy.js",
+    "buildfull": "scripts/deploy.js && scripts/deployRss.js && ./scripts/deploy_badges.js",
+    "build": "scripts/deploy.js",
+    "deploy": "deploy-to-gh-pages ./deploy",
     "start": "http-server deploy"
   },
   "devDependencies": {
