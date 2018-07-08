@@ -5,6 +5,11 @@ info:
   title: VPPartner.Order.Api V4
   description: ''
   x-providerName: partners
+  x-origin:
+    - format: swagger
+      url: 'http://order.dev.ptn.chrysalis.dc1.fr.vpgrp.io/swagger/v4/swagger.json'
+      version: '2.0'
+  x-serviceName: order
 paths:
   "/{partner}/Cart/{cartId}/Voucher/{voucherId}":
     post:

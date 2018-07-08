@@ -5,6 +5,12 @@ info:
   title: VPPartner.Member.Api V4
   description: ''
   x-providerName: partners
+  x-origin:
+    - format: swagger
+      url: 'http://member.dev.ptn.chrysalis.dc1.fr.vpgrp.io/swagger/v4/swagger.json'
+      version: '2.0'
+  x-serviceName: member
+produces:
 paths:
   "/{partner}/member/{email}":
     get:
