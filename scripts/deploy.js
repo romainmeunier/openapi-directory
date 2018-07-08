@@ -108,7 +108,7 @@ function addSwagger(apiList, swagger, filename) {
     apiEntry.preferred = versionEntry.info.version;
 
   //FIXME: here we don't track deleted version, not a problem for right now :)
-  apiEntry.added = _([apiEntry.added, versionEntry.added]).compact().min();
+  // apiEntry.added = _([apiEntry.added, versionEntry.added]).compact().min();
 
   return apiEntry;
 }
@@ -120,15 +120,16 @@ function buildVersionEntry(swagger, filename) {
   util.saveJson(deployDir(`${basename}.json`), swagger, true);
   util.saveYaml(deployDir(`${basename}.yaml`), swagger, true);
 
-  var dates = util.exec(`git log --format=%aD --follow -- '${filename}'`);
-  dates = _(dates).split('\n').compact();
+  // var dates = util.exec(`git log --format=%aD --follow -- '${filename}'`);
+  // console.log(dates)
+  // dates = _(dates).split('\n').compact();
 
   return {
     swaggerUrl: rootUrl(`${basename}.json`),
     swaggerYamlUrl: rootUrl(`${basename}.yaml`),
     info: swagger.info,
     externalDocs: swagger.externalDocs,
-    added: new Date(dates.last()),
-    updated: new Date(dates.first())
+    // added: new Date(dates.last()),
+    // updated: new Date(dates.first())
   };
 }
