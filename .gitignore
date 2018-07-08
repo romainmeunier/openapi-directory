@@ -1,6 +1,7 @@
 # Deploy dirs
 deploy
 twitter
+refAPI
 
 # Locally reffed files
 **/examples/*

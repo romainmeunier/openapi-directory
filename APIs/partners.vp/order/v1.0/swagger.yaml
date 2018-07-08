@@ -1,0 +1,3717 @@
+---
+swagger: '2.0'
+info:
+  version: v4
+  title: VPPartner.Order.Api V4
+  description: ''
+  x-providerName: partners
+paths:
+  "/{partner}/Cart/{cartId}/Voucher/{voucherId}":
+    post:
+      tags:
+      - Voucher
+      summary: Ajoute les coupons au cart et les change en status réservé
+      operationId: ByPartnerCartByCartIdVoucherByVoucherIdPost
+      consumes: []
+      produces: []
+      parameters:
+      - name: cartId
+        in: path
+        description: Identifiant du panier
+        required: true
+        type: integer
+        format: int32
+      - name: voucherId
+        in: path
+        description: Identifiant du coupon à réserver
+        required: true
+        type: integer
+        format: int32
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+    delete:
+      tags:
+      - Voucher
+      summary: Retire les coupons du panier et les change en status disponible
+      operationId: ByPartnerCartByCartIdVoucherByVoucherIdDelete
+      consumes: []
+      produces: []
+      parameters:
+      - name: cartId
+        in: path
+        description: Identifiant du panier
+        required: true
+        type: integer
+        format: int32
+      - name: voucherId
+        in: path
+        description: Identifiant du coupon à retirer
+        required: true
+        type: integer
+        format: int32
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Operations/{operationId}/LogisticProperties":
+    get:
+      tags:
+      - Order
+      summary: Starts the shipping orders.
+      operationId: ByPartnerOperationsByOperationIdLogisticPropertiesGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: operationId
+        in: path
+        description: The operation identifier.
+        required: true
+        type: integer
+        format: int32
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Operations/{operationId}/ProductPreparation":
+    get:
+      tags:
+      - Order
+      summary: Starts the shipping orders.
+      operationId: ByPartnerOperationsByOperationIdProductPreparationGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: operationId
+        in: path
+        description: The operation identifier.
+        required: true
+        type: integer
+        format: int32
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/ParcelsSendRequest/{operationId}":
+    get:
+      tags:
+      - Order
+      summary: Get Parcels for an operation by calling Partner
+      operationId: ByPartnerParcelsSendRequestByOperationIdGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: operationId
+        in: path
+        description: ''
+        required: true
+        type: integer
+        format: int32
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/GetInvoiceFromOrderAndParcel/{orderId}/{parcelId}":
+    get:
+      tags:
+      - Order
+      operationId: ByPartnerGetInvoiceFromOrderAndParcelByOrderIdByParcelIdGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: orderId
+        in: path
+        required: true
+        type: integer
+        format: int32
+      - name: parcelId
+        in: path
+        required: true
+        type: integer
+        format: int32
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/GetInvoiceFromOrder/{orderId}":
+    get:
+      tags:
+      - Order
+      operationId: ByPartnerGetInvoiceFromOrderByOrderIdGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: orderId
+        in: path
+        required: true
+        type: integer
+        format: int32
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/LogisticScenario/ResponseToAskedChange/{operationId}/{newScenario}/{askingUniqueIdentifier}":
+    get:
+      tags:
+      - Order
+      operationId: ByPartnerLogisticScenarioResponseToAskedChangeByOperationIdByNewScenarioByAskingUniqueIdentifierGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        type: integer
+        format: int32
+      - name: newScenario
+        in: path
+        required: true
+        type: integer
+        format: int32
+      - name: askingUniqueIdentifier
+        in: path
+        required: true
+        type: string
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/SynchronizationOfOrdersForShipmentDone/{operationId}":
+    get:
+      tags:
+      - Order
+      operationId: ByPartnerSynchronizationOfOrdersForShipmentDoneByOperationIdGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        type: integer
+        format: int32
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Operation/AskForCR2/{operationCode}":
+    get:
+      tags:
+      - Order
+      operationId: ByPartnerOperationAskForCR2ByOperationCodeGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: operationCode
+        in: path
+        required: true
+        type: string
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Order/{operationId}/Shipping/Check":
+    get:
+      tags:
+      - Order
+      operationId: ByPartnerOrderByOperationIdShippingCheckGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        type: integer
+        format: int32
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Order/BlockedOrdersForLogistic":
+    get:
+      tags:
+      - Order
+      operationId: ByPartnerOrderBlockedOrdersForLogisticGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: blockingReasonTypeId
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: sinceDateOperationActive
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  ? "/{partner}/Order/BlockedOrdersForLogistic/BlockingReason/{blockingReasonTypeId}/SinceWhenActiveOperation/{sinceDateOperationActive}"
+  : get:
+      tags:
+      - Order
+      operationId: ByPartnerOrderBlockedOrdersForLogisticBlockingReasonByBlockingReasonTypeIdSinceWhenActiveOperationBySinceDateOperationActiveGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: blockingReasonTypeId
+        in: path
+        required: true
+        type: integer
+        format: int32
+      - name: sinceDateOperationActive
+        in: path
+        required: true
+        type: integer
+        format: int32
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Order/CitiesByPostalCode/{countryCode}/{zipCode}":
+    get:
+      tags:
+      - Order
+      operationId: ByPartnerOrderCitiesByPostalCodeByCountryCodeByZipCodeGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: countryCode
+        in: path
+        required: true
+        type: string
+      - name: zipCode
+        in: path
+        required: true
+        type: string
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Order/OMS/{orderId}":
+    get:
+      tags:
+      - Order
+      summary: "[BETA] Returns the order status in OMS\r\nStatus can be :\r\nWaitingForRelay\r\n--
+        The order has not been relayed to the WMS yet.\r\nPartiallyRelayed\r\n-- The
+        order has been relayed but for some exceptional reason\r\n   the relay is
+        partial.\r\nRelayed\r\n-- The order has been relayed to the WMS.\r\nSent\r\n--
+        The order has been sent.\r\nOther\r\n-- The order has been cancelled or it
+        is in a problematic state."
+      operationId: ByPartnerOrderOMSByOrderIdGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: orderId
+        in: path
+        description: ''
+        required: true
+        type: integer
+        format: int32
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/orders/{orderId}/CanBeReturned":
+    get:
+      tags:
+      - Return
+      summary: Determines whether the specified order can be returned by the consumer.
+      operationId: ByPartnerOrdersByOrderIdCanBeReturnedGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: partner
+        in: path
+        description: The partner.
+        required: true
+        type: string
+      - name: orderId
+        in: path
+        description: The order identifier.
+        required: true
+        type: integer
+        format: int32
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/orders/ReturnsReasons":
+    get:
+      tags:
+      - Return
+      summary: Retrieves the possible existing order return reasons.
+      operationId: ByPartnerOrdersReturnsReasonsGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+          examples:
+            application/json:
+              errors: []
+              exec: 0
+              result:
+              - description: La couleur/la matière/les finitions me déçoivent
+                reasonId: 1
+                value: DisappointingDetails
+                isVpError: false
+                isArbitrage: false
+  "/{partner}/orders/{orderId}/Returns":
+    get:
+      tags:
+      - Return
+      summary: Gets the existing return(s) declaration(s) for a specified order.
+      operationId: ByPartnerOrdersByOrderIdReturnsGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: partner
+        in: path
+        description: The partner.
+        required: true
+        type: string
+      - name: orderId
+        in: path
+        description: The order identifier.
+        required: true
+        type: integer
+        format: int32
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+          examples:
+            application/json:
+              errors: []
+              exec: 0
+              result:
+              - returnId: 0
+                limitReturnDate: '0001-01-01T00:00:00'
+                limitParcelReceptionAtWarehouse: '0001-01-01T00:00:00'
+                limitMemberReexpeditionParcel: '0001-01-01T00:00:00'
+                errorLevel: 0
+                returnProducts:
+                - productId: 789132
+                  orderDetailId: 456798
+                  quantity: 132
+                  price: 0
+                  limitReturnDate: '0001-01-01T00:00:00'
+                  refundDate: '0001-01-01T00:00:00'
+                  declarationDetailsId: 123456
+                  isRejected: false
+                  isRefundRefused: false
+                  isVirtual: false
+                  isWildReturn: false
+                returnDeclarationId: 0
+                orderId: 123456789
+                creationDate: '0001-01-01T00:00:00'
+                reason: 0
+  "/{partner}/orders/{orderId}/ReturnDocument/{declarationDetailsId}":
+    get:
+      tags:
+      - Return
+      summary: Gets the {PDF} document that the consumer must join with the returned
+        order.
+      operationId: ByPartnerOrdersByOrderIdReturnDocumentByDeclarationDetailsIdGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: partner
+        in: path
+        description: The partner.
+        required: true
+        type: string
+      - name: orderId
+        in: path
+        description: The order identifier.
+        required: true
+        type: integer
+        format: int32
+      - name: declarationDetailsId
+        in: path
+        description: The declaration id.
+        required: true
+        type: integer
+        format: int32
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Member/{memberId}/Voucher":
+    get:
+      tags:
+      - Voucher
+      summary: Récupère les coupons disponible pour le membre
+      operationId: ByPartnerMemberByMemberIdVoucherGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: memberId
+        in: path
+        description: identifiant du membre
+        required: true
+        type: integer
+        format: int32
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Cart/{cartId}/Voucher":
+    get:
+      tags:
+      - Voucher
+      summary: Récupere la liste des coupons associés à un panier
+      operationId: ByPartnerCartByCartIdVoucherGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: cartId
+        in: path
+        description: identifiant du panier
+        required: true
+        type: integer
+        format: int32
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Order/{orderId}/Voucher":
+    get:
+      tags:
+      - Voucher
+      summary: Récupere la liste des coupons associés à une commande
+      operationId: ByPartnerOrderByOrderIdVoucherGet
+      consumes: []
+      produces: []
+      parameters:
+      - name: orderId
+        in: path
+        description: numero VP
+        required: true
+        type: integer
+        format: int32
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Carts/Finalize":
+    post:
+      tags:
+      - Order
+      operationId: ByPartnerCartsFinalizePost
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: carts
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.CallPartner.Dto.OrderList"
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Carts/LightFinalize":
+    post:
+      tags:
+      - Order
+      operationId: ByPartnerCartsLightFinalizePost
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: carts
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.Order.Dto.OrderLightList"
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Operations/Report":
+    post:
+      tags:
+      - Order
+      summary: Starts the shipping orders.
+      operationId: ByPartnerOperationsReportPost
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: operationIdsOrCodes
+        in: body
+        description: The operation identifier or code list.
+        required: false
+        schema:
+          type: array
+          items:
+            type: object
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Orders/UpdateInvoiceAddress/{orderId}":
+    post:
+      tags:
+      - Order
+      operationId: ByPartnerOrdersUpdateInvoiceAddressByOrderIdPost
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: orderId
+        in: path
+        required: true
+        type: integer
+        format: int32
+      - name: invoiceAddressInfos
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.Order.Dto.DeliveryInfo"
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/help/ticket":
+    post:
+      tags:
+      - Order
+      operationId: ByPartnerHelpTicketPost
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: ticket
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.Order.Dto.SrmTicket"
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Order/Refund/{OrderId}":
+    post:
+      tags:
+      - Order
+      operationId: ByPartnerOrderRefundByOrderIdPost
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: OrderId
+        in: path
+        required: true
+        type: integer
+        format: int32
+      - name: refund
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.CallPartner.Dto.RefundOrder"
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/GetActiveCartsInformations/Operation/{operationId}":
+    post:
+      tags:
+      - Order
+      operationId: ByPartnerGetActiveCartsInformationsOperationByOperationIdPost
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: operationId
+        in: path
+        required: true
+        type: integer
+        format: int32
+      - name: orderShipping
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.CallPartner.Dto.OrderShipping"
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Order/PickupPointsAround":
+    post:
+      tags:
+      - Order
+      operationId: ByPartnerOrderPickupPointsAroundPost
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: pudoItemModel
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.Order.Dto.PudoItemModel"
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Order/DeliveryDateRange":
+    post:
+      tags:
+      - Order
+      operationId: ByPartnerOrderDeliveryDateRangePost
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: param
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.Order.Dto.DelDemParameter"
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/orders/{orderId}/RequestReturn":
+    post:
+      tags:
+      - Return
+      summary: Submits a new order return declaration.
+      description: |-
+        # Remarks
+
+        ## Parameters
+
+        ### ReturnDemandReasons
+
+        | Value  | Description                                        |
+        | ------ |:--------------------------------------------------:|
+        | 1      | Product not convenient for the client              |
+        | 2      | The client did not received the product he ordered |
+        | 3      | The client received a different product            |
+        | 4      | Difference between parcels and delivery note       |
+        | 5      | Product failure                                    |
+        | 6      | Logistic returns                                   |
+        | 7      | Withdrawal VBI Rosedeal                            |
+
+        ### ReturnedProducts.ReasonId
+
+        The reason ID must correspond to one of the "ReasonID" field that can be found in the result of the endpoint [GET /{partner}/orders/ReturnsReasons](#operations-Return-ByPartnerOrdersReturnsReasonsGet).
+      operationId: ByPartnerOrdersByOrderIdRequestReturnPost
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: partner
+        in: path
+        description: The partner.
+        required: true
+        type: string
+      - name: orderId
+        in: path
+        description: The order identifier.
+        required: true
+        type: integer
+        format: int32
+      - name: returnInfo
+        in: body
+        description: The return information.
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.Order.Dto.ReturnDeclarationInfo"
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+          examples:
+            application/json:
+              errors: []
+              exec: 0
+              result:
+                returnId: 0
+                limitReturnDate: '0001-01-01T00:00:00'
+                limitParcelReceptionAtWarehouse: '0001-01-01T00:00:00'
+                limitMemberReexpeditionParcel: '0001-01-01T00:00:00'
+                errorLevel: 0
+                returnProducts:
+                - productId: 789132
+                  orderDetailId: 456798
+                  quantity: 132
+                  price: 0
+                  limitReturnDate: '0001-01-01T00:00:00'
+                  refundDate: '0001-01-01T00:00:00'
+                  declarationDetailsId: 123456
+                  isRejected: false
+                  isRefundRefused: false
+                  isVirtual: false
+                  isWildReturn: false
+                returnDeclarationId: 0
+                orderId: 123456789
+                creationDate: '0001-01-01T00:00:00'
+                reason: 0
+  "/{partner}/orders/{orderId}/AnormalReturn":
+    post:
+      tags:
+      - Return
+      summary: Submit a declaration of return to the consumer service for a not eligible
+        return (expired return date for example).
+      description: |-
+        # Remarks
+
+        ## Parameters
+
+        ### ReturnDemandReasons
+
+        | Value  | Description                                        |
+        | ------ |:--------------------------------------------------:|
+        | 1      | Product not convenient for the client              |
+        | 2      | The client did not received the product he ordered |
+        | 3      | The client received a different product            |
+        | 4      | Difference between parcels and delivery note       |
+        | 5      | Product failure                                    |
+        | 6      | Logistic returns                                   |
+        | 7      | Withdrawal VBI Rosedeal                            |
+      operationId: ByPartnerOrdersByOrderIdAnormalReturnPost
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: partner
+        in: path
+        description: The partner.
+        required: true
+        type: string
+      - name: orderId
+        in: path
+        description: The order identifier.
+        required: true
+        type: integer
+        format: int32
+      - name: returnInfo
+        in: body
+        description: The return information.
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.Order.Dto.ReturnDeclarationInfoBase"
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+          examples:
+            application/json:
+              errors: []
+              exec: 0
+              result:
+                returnId: 0
+                limitReturnDate: '0001-01-01T00:00:00'
+                limitParcelReceptionAtWarehouse: '0001-01-01T00:00:00'
+                limitMemberReexpeditionParcel: '0001-01-01T00:00:00'
+                errorLevel: 0
+                returnProducts:
+                - productId: 789132
+                  orderDetailId: 456798
+                  quantity: 132
+                  price: 0
+                  limitReturnDate: '0001-01-01T00:00:00'
+                  refundDate: '0001-01-01T00:00:00'
+                  declarationDetailsId: 123456
+                  isRejected: false
+                  isRefundRefused: false
+                  isVirtual: false
+                  isWildReturn: false
+                returnDeclarationId: 0
+                orderId: 123456789
+                creationDate: '0001-01-01T00:00:00'
+                reason: 0
+  "/{partner}/orders/{orderId}/ReturnDocument/{declarationDetailsId}/Paper":
+    post:
+      tags:
+      - Return
+      summary: Send the paper document by mail that the consumer must join with the
+        returned order.
+      description: |-
+        # Remarks
+
+        ## Parameters
+
+        ### Address.AddressName
+
+        This field can be ignored if needed.
+      operationId: ByPartnerOrdersByOrderIdReturnDocumentByDeclarationDetailsIdPaperPost
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: partner
+        in: path
+        description: The partner.
+        required: true
+        type: string
+      - name: orderId
+        in: path
+        description: The order identifier.
+        required: true
+        type: integer
+        format: int32
+      - name: declarationDetailsId
+        in: path
+        description: The declaration id.
+        required: true
+        type: integer
+        format: int32
+      - name: address
+        in: body
+        description: The destination address.
+        required: false
+        schema:
+          "$ref": "#/definitions/Front.PostSales.GarmProxy.FrontExposition.ModelObject.Address"
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/orders/{orderId}/NPAI":
+    post:
+      tags:
+      - Return
+      summary: Updates a NAPI depending of the member choice.
+      description: |-
+        # Remarks
+
+        ## Parameters
+
+        ### MemberChoice
+
+        | Value  | Alias | Description                              |
+        | ------ |:-----:|:----------------------------------------:|
+        | 1      | RES   | Returns the product to the stock.        |
+        | 2      | REL   | Put the product in the delivery process. |
+
+        ### UseAsDefaultAddress
+
+        When this parameter is set to *True*, the *DeliveryAddress* will be use to override the default member delivery address for its next orders.
+
+        ### DeliveryAddress
+
+        A few points about this parameter.
+        * The *AddressName* field can be ignored if needed.
+        * The *Country* field takes as value the [ISO ALPHA-2 Code](http://www.nationsonline.org/oneworld/country_code_list.htm) of the country.
+      operationId: ByPartnerOrdersByOrderIdNPAIPost
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: partner
+        in: path
+        description: The partner.
+        required: true
+        type: string
+      - name: orderId
+        in: path
+        description: The order identifier.
+        required: true
+        type: integer
+        format: int32
+      - name: returnNapi
+        in: body
+        description: The member choice and information.
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.Order.Dto.ReturnNPAI"
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/orders/{orderId}/ForceCancel":
+    post:
+      tags:
+      - Returns
+      operationId: ByPartnerOrdersByOrderIdForceCancelPost
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: orderId
+        in: path
+        required: true
+        type: integer
+        format: int32
+      - name: forceCancelation
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.Dto.Logistic.ForceCancelation"
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/orders/{orderId}/Return":
+    post:
+      tags:
+      - Returns
+      operationId: ByPartnerOrdersByOrderIdReturnPost
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: orderId
+        in: path
+        required: true
+        type: integer
+        format: int32
+      - name: returnedOrder
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.Dto.Logistic.ReturnedOrder"
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Voucher":
+    post:
+      tags:
+      - Voucher
+      summary: Génère une demande de création de Voucher pour le BackOffice
+      operationId: ByPartnerVoucherPost
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: parameters
+        in: body
+        description: paramètres de création du voucher
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.Order.Dto.CreateVoucherRequestLight"
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}":
+    put:
+      tags:
+      - Order
+      operationId: ByPartnerPut
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: orderId
+        in: query
+        required: false
+        type: integer
+        format: int32
+      - name: deliveryInfo
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.Order.Dto.DeliveryInfo"
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/Orders/{orderId}/Cancel":
+    put:
+      tags:
+      - Order
+      operationId: ByPartnerOrdersByOrderIdCancelPut
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: orderId
+        in: path
+        required: true
+        type: integer
+        format: int32
+      - name: cancel
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.Order.Dto.OrderCancel"
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/SendOrders":
+    put:
+      tags:
+      - Order
+      operationId: ByPartnerSendOrdersPut
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: partnerOrders
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.Order.Dto.PartnerOrders"
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/GetOrders/{operationId}":
+    put:
+      tags:
+      - Order
+      operationId: ByPartnerGetOrdersByOperationIdPut
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: listOfOrderIds
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.CallPartner.Dto.IntegerList"
+      - name: operationId
+        in: path
+        required: true
+        type: integer
+        format: int32
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+  "/{partner}/GetOrdersByMemberIds/OnlyForOrderIds/{onlyForOrderIds}":
+    put:
+      tags:
+      - Order
+      summary: "Allow Partner to retrieve all Order corresponding to Members that
+        are passed in the body of the request.\r\nThose Order are grouped by Member
+        in the response."
+      operationId: ByPartnerGetOrdersByMemberIdsOnlyForOrderIdsByOnlyForOrderIdsPut
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces:
+      - text/plain
+      - application/json
+      - text/json
+      parameters:
+      - name: onlyForOrderIds
+        in: path
+        description: "Select the Order data that will be retrieved =&gt; if true,
+          only OrderIds will be retrieved ; if false, all data form\r\n            Orders
+          are retrieved."
+        required: true
+        type: boolean
+      - name: memberIdList
+        in: body
+        description: List of the MemberId from Members that we want Orders.
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.Order.Dto.MemberIdList"
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            "$ref": "#/definitions/VPPartner.Common.Dto.ActionResult`1[[System.Collections.Generic.IEnumerable`1[[VPPartner.Order.Dto.MemberOrders`1[[VPPartner.CallPartner.Dto.ExtendedOrderLight,
+              VPPartner.CallPartner.Dto, Version=1.0.47741.0, Culture=neutral, PublicKeyToken=null]],
+              VPPartner.Order.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]],
+              System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+  "/{partner}/operations/transportin":
+    put:
+      tags:
+      - Returns
+      operationId: ByPartnerOperationsTransportinPut
+      consumes:
+      - application/json-patch+json
+      - application/json
+      - text/json
+      - application/*+json
+      produces: []
+      parameters:
+      - name: partner
+        in: path
+        required: true
+        type: string
+      - name: operationGroups
+        in: body
+        required: false
+        schema:
+          "$ref": "#/definitions/VPPartner.Dto.Logistic.OperationGroups"
+      - name: Partner-Token
+        in: header
+        description: partner token
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Success
+definitions:
+  VPPartner.CallPartner.Dto.OrderList:
+    required:
+    - carts
+    type: object
+    properties:
+      carts:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.CallPartner.Dto.Cart"
+  VPPartner.CallPartner.Dto.Cart:
+    type: object
+    properties:
+      totalQuantity:
+        format: int32
+        type: integer
+      totalAmount:
+        format: double
+        type: number
+      cartDetails:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.CallPartner.Dto.CartDetail"
+      items:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.CallPartner.Dto.CartDetail"
+      deliveryAddress:
+        "$ref": "#/definitions/VPPartner.CallPartner.Dto.DeliveryAddress"
+      invoiceAddress:
+        "$ref": "#/definitions/VPPartner.CallPartner.Dto.DeliveryAddress"
+      expirationTime:
+        format: date-time
+        type: string
+      shippingFee:
+        format: double
+        type: number
+      reductionAmount:
+        format: double
+        type: number
+      shippingFeeVAT:
+        format: double
+        type: number
+      paymentId:
+        format: int32
+        type: integer
+      bankOrganismId:
+        format: int32
+        type: integer
+      paymentDate:
+        format: date-time
+        type: string
+      currencyId:
+        format: int32
+        type: integer
+      transactionNumber:
+        format: int32
+        type: integer
+      smaugReference:
+        type: string
+      smaugTransactionNumber:
+        type: string
+      merchantCertificate:
+        type: string
+      paymentType:
+        format: int32
+        type: integer
+      discountAmount:
+        format: double
+        type: number
+      discountIsPercent:
+        type: boolean
+      discountPercentage:
+        format: double
+        type: number
+      memberId:
+        format: int32
+        type: integer
+      operationId:
+        format: int32
+        type: integer
+      countryCode:
+        enum:
+        - BE
+        - NL
+        - FR
+        - DE
+        - ES
+        - IT
+        - EN
+        - AT
+        - LU
+        - GB
+        - AF
+        - ZA
+        - AX
+        - AL
+        - DZ
+        - AD
+        - AO
+        - AI
+        - AQ
+        - AG
+        - AN
+        - SA
+        - AR
+        - AM
+        - AW
+        - AU
+        - AZ
+        - BS
+        - BH
+        - BD
+        - BB
+        - BY
+        - BZ
+        - BJ
+        - BM
+        - BT
+        - BO
+        - BA
+        - BW
+        - BV
+        - BR
+        - BN
+        - BG
+        - BF
+        - BI
+        - KY
+        - KH
+        - CM
+        - CA
+        - CV
+        - CF
+        - CL
+        - CN
+        - CX
+        - CY
+        - CC
+        - CO
+        - KM
+        - CG
+        - CD
+        - CK
+        - KR
+        - KP
+        - CR
+        - CI
+        - HR
+        - CU
+        - DK
+        - DJ
+        - DO
+        - DM
+        - EG
+        - SV
+        - AE
+        - EC
+        - ER
+        - EE
+        - US
+        - ET
+        - FK
+        - FO
+        - FJ
+        - FI
+        - GA
+        - GM
+        - GE
+        - GS
+        - GH
+        - GI
+        - GR
+        - GD
+        - GL
+        - GP
+        - GU
+        - GT
+        - GG
+        - GN
+        - GW
+        - GQ
+        - GY
+        - GF
+        - HT
+        - HM
+        - HN
+        - HK
+        - HU
+        - IM
+        - UM
+        - VG
+        - VI
+        - IN
+        - ID
+        - IR
+        - IQ
+        - IE
+        - IS
+        - IL
+        - JM
+        - JP
+        - JE
+        - JO
+        - KZ
+        - KE
+        - KG
+        - KI
+        - KW
+        - LA
+        - LS
+        - LV
+        - LB
+        - LR
+        - LY
+        - LI
+        - LT
+        - MO
+        - MK
+        - MG
+        - MY
+        - MW
+        - MV
+        - ML
+        - MT
+        - MP
+        - MA
+        - MH
+        - MQ
+        - MU
+        - MR
+        - YT
+        - MX
+        - FM
+        - MD
+        - MC
+        - MN
+        - ME
+        - MS
+        - MZ
+        - MM
+        - NA
+        - NR
+        - NP
+        - NI
+        - NE
+        - NG
+        - NU
+        - NF
+        - 'NO'
+        - NC
+        - NZ
+        - IO
+        - OM
+        - UG
+        - UZ
+        - PK
+        - PW
+        - PS
+        - PA
+        - PG
+        - PY
+        - PE
+        - PH
+        - PN
+        - PL
+        - PF
+        - PR
+        - PT
+        - QA
+        - RE
+        - RO
+        - RU
+        - RW
+        - EH
+        - BL
+        - SH
+        - LC
+        - KN
+        - SM
+        - MF
+        - PM
+        - VA
+        - VC
+        - SB
+        - WS
+        - AS
+        - ST
+        - SN
+        - RS
+        - SC
+        - SL
+        - SG
+        - SK
+        - SI
+        - SO
+        - SD
+        - LK
+        - SE
+        - CH
+        - SR
+        - SJ
+        - SZ
+        - SY
+        - TJ
+        - TW
+        - TZ
+        - TD
+        - CZ
+        - TF
+        - TH
+        - TL
+        - TG
+        - TK
+        - TO
+        - TT
+        - TN
+        - TM
+        - TC
+        - TR
+        - TV
+        - UA
+        - UY
+        - VU
+        - VE
+        - VN
+        - WF
+        - YE
+        - ZM
+        - ZW
+        - CHF
+        - CHD
+        - CHI
+        - FRK
+        - DEK
+        - ESK
+        - ITK
+        - CHK
+        type: string
+      country:
+        enum:
+        - BE
+        - NL
+        - FR
+        - DE
+        - ES
+        - IT
+        - EN
+        - AT
+        - LU
+        - GB
+        - AF
+        - ZA
+        - AX
+        - AL
+        - DZ
+        - AD
+        - AO
+        - AI
+        - AQ
+        - AG
+        - AN
+        - SA
+        - AR
+        - AM
+        - AW
+        - AU
+        - AZ
+        - BS
+        - BH
+        - BD
+        - BB
+        - BY
+        - BZ
+        - BJ
+        - BM
+        - BT
+        - BO
+        - BA
+        - BW
+        - BV
+        - BR
+        - BN
+        - BG
+        - BF
+        - BI
+        - KY
+        - KH
+        - CM
+        - CA
+        - CV
+        - CF
+        - CL
+        - CN
+        - CX
+        - CY
+        - CC
+        - CO
+        - KM
+        - CG
+        - CD
+        - CK
+        - KR
+        - KP
+        - CR
+        - CI
+        - HR
+        - CU
+        - DK
+        - DJ
+        - DO
+        - DM
+        - EG
+        - SV
+        - AE
+        - EC
+        - ER
+        - EE
+        - US
+        - ET
+        - FK
+        - FO
+        - FJ
+        - FI
+        - GA
+        - GM
+        - GE
+        - GS
+        - GH
+        - GI
+        - GR
+        - GD
+        - GL
+        - GP
+        - GU
+        - GT
+        - GG
+        - GN
+        - GW
+        - GQ
+        - GY
+        - GF
+        - HT
+        - HM
+        - HN
+        - HK
+        - HU
+        - IM
+        - UM
+        - VG
+        - VI
+        - IN
+        - ID
+        - IR
+        - IQ
+        - IE
+        - IS
+        - IL
+        - JM
+        - JP
+        - JE
+        - JO
+        - KZ
+        - KE
+        - KG
+        - KI
+        - KW
+        - LA
+        - LS
+        - LV
+        - LB
+        - LR
+        - LY
+        - LI
+        - LT
+        - MO
+        - MK
+        - MG
+        - MY
+        - MW
+        - MV
+        - ML
+        - MT
+        - MP
+        - MA
+        - MH
+        - MQ
+        - MU
+        - MR
+        - YT
+        - MX
+        - FM
+        - MD
+        - MC
+        - MN
+        - ME
+        - MS
+        - MZ
+        - MM
+        - NA
+        - NR
+        - NP
+        - NI
+        - NE
+        - NG
+        - NU
+        - NF
+        - 'NO'
+        - NC
+        - NZ
+        - IO
+        - OM
+        - UG
+        - UZ
+        - PK
+        - PW
+        - PS
+        - PA
+        - PG
+        - PY
+        - PE
+        - PH
+        - PN
+        - PL
+        - PF
+        - PR
+        - PT
+        - QA
+        - RE
+        - RO
+        - RU
+        - RW
+        - EH
+        - BL
+        - SH
+        - LC
+        - KN
+        - SM
+        - MF
+        - PM
+        - VA
+        - VC
+        - SB
+        - WS
+        - AS
+        - ST
+        - SN
+        - RS
+        - SC
+        - SL
+        - SG
+        - SK
+        - SI
+        - SO
+        - SD
+        - LK
+        - SE
+        - CH
+        - SR
+        - SJ
+        - SZ
+        - SY
+        - TJ
+        - TW
+        - TZ
+        - TD
+        - CZ
+        - TF
+        - TH
+        - TL
+        - TG
+        - TK
+        - TO
+        - TT
+        - TN
+        - TM
+        - TC
+        - TR
+        - TV
+        - UA
+        - UY
+        - VU
+        - VE
+        - VN
+        - WF
+        - YE
+        - ZM
+        - ZW
+        - CHF
+        - CHD
+        - CHI
+        - FRK
+        - DEK
+        - ESK
+        - ITK
+        - CHK
+        type: string
+      cartId:
+        format: int32
+        type: integer
+      cartStatus:
+        format: int32
+        enum:
+        - 0
+        - 1
+        - 10
+        - 11
+        - 20
+        - 21
+        - 30
+        - 40
+        - 50
+        - 54
+        - 55
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 65
+        - 70
+        - 75
+        - 76
+        - 80
+        - 99
+        type: integer
+      status:
+        format: int32
+        enum:
+        - 0
+        - 1
+        - 10
+        - 11
+        - 20
+        - 21
+        - 30
+        - 40
+        - 50
+        - 54
+        - 55
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 65
+        - 70
+        - 75
+        - 76
+        - 80
+        - 99
+        type: integer
+      version:
+        format: int32
+        type: integer
+  VPPartner.CallPartner.Dto.CartDetail:
+    type: object
+    properties:
+      productFamilyId:
+        format: int32
+        type: integer
+      productId:
+        format: int32
+        type: integer
+      productExternalId:
+        format: int32
+        type: integer
+      productCustomDescription:
+        type: string
+      quantity:
+        format: int32
+        type: integer
+      price:
+        format: double
+        type: number
+      vat:
+        format: double
+        type: number
+  VPPartner.CallPartner.Dto.DeliveryAddress:
+    type: object
+    properties:
+      cartId:
+        format: int32
+        type: integer
+      pickupRef:
+        type: string
+      lastName:
+        maxLength: 40
+        type: string
+      firstName:
+        maxLength: 40
+        type: string
+      number:
+        type: string
+      street:
+        maxLength: 37
+        type: string
+      street2:
+        maxLength: 37
+        type: string
+      address3:
+        maxLength: 37
+        type: string
+      box:
+        type: string
+      postalCode:
+        maxLength: 10
+        type: string
+      city:
+        maxLength: 40
+        type: string
+      mobilePhone:
+        maxLength: 30
+        type: string
+      email:
+        maxLength: 80
+        type: string
+      digicode:
+        type: string
+      floor:
+        format: int32
+        type: integer
+      companyName:
+        maxLength: 40
+        type: string
+      country:
+        type: string
+      state:
+        type: string
+      allocationPriority:
+        format: int32
+        type: integer
+      shippingMethodType:
+        type: string
+      shippingCarrier:
+        type: string
+      shippingService:
+        type: string
+      deliveryMode:
+        format: int32
+        type: integer
+      shippingInsuranceAmount:
+        format: double
+        type: number
+      language:
+        type: string
+  VPPartner.Order.Dto.OrderLightList:
+    required:
+    - carts
+    type: object
+    properties:
+      carts:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.Order.Dto.LightSmaugCart"
+  VPPartner.Order.Dto.LightSmaugCart:
+    type: object
+    properties:
+      cartId:
+        format: int32
+        type: integer
+      version:
+        format: int32
+        type: integer
+      smaugTransactionNumber:
+        type: string
+      smaugReference:
+        type: string
+      deliveryAddressId:
+        format: int32
+        type: integer
+      pickupPointSiteCode:
+        type: string
+      invoiceAddressId:
+        format: int32
+        type: integer
+      shippingFee:
+        format: double
+        type: number
+      shippingFeeVAT:
+        format: double
+        type: number
+      shippingInsuranceAmount:
+        format: double
+        type: number
+      deliveryMode:
+        format: int32
+        type: integer
+      shippingService:
+        type: string
+      shippingMethodType:
+        type: string
+      allocationPriority:
+        format: int32
+        type: integer
+      pickupPointFirmId:
+        format: int32
+        type: integer
+      discountAmount:
+        format: double
+        type: number
+      discountIsPercent:
+        type: boolean
+      discountPercentage:
+        format: double
+        type: number
+  VPPartner.Order.Dto.DeliveryInfo:
+    required:
+    - deliveryAddress
+    type: object
+    properties:
+      deliveryAddress:
+        "$ref": "#/definitions/VPPartner.CallPartner.Dto.DeliveryAddress"
+  VPPartner.Order.Dto.SrmTicket:
+    type: object
+    properties:
+      operationCode:
+        type: string
+      orderId:
+        format: int32
+        maximum: 2147483647
+        minimum: 0
+        type: integer
+      memberId:
+        format: int32
+        maximum: 2147483647
+        minimum: 1
+        type: integer
+      siteId:
+        format: int32
+        maximum: 2147483647
+        minimum: 1
+        type: integer
+      rubriqueId:
+        format: int32
+        type: integer
+      content:
+        type: string
+      deviceId:
+        type: string
+      osName:
+        type: string
+      version:
+        type: string
+      browserName:
+        type: string
+      originalSubject:
+        type: string
+      contact:
+        type: string
+      isMobile:
+        type: boolean
+  VPPartner.CallPartner.Dto.RefundOrder:
+    type: object
+    properties:
+      orderId:
+        format: int32
+        type: integer
+      returnDetails:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.CallPartner.Dto.RefundOrderDetails"
+      refundShippingCost:
+        type: boolean
+  VPPartner.CallPartner.Dto.RefundOrderDetails:
+    type: object
+    properties:
+      productId:
+        format: int32
+        type: integer
+      quantity:
+        format: int32
+        type: integer
+  VPPartner.CallPartner.Dto.OrderShipping:
+    type: object
+    properties:
+      orderId:
+        format: int32
+        type: integer
+      cartId:
+        format: int32
+        type: integer
+      cartIdList:
+        type: array
+        items:
+          format: int32
+          type: integer
+  VPPartner.Order.Dto.PudoItemModel:
+    type: object
+    properties:
+      latitude:
+        format: float
+        type: number
+      longitude:
+        format: float
+        type: number
+      nbMax:
+        format: int32
+        type: integer
+      floW:
+        format: int32
+        type: integer
+      deliveryDate:
+        format: date-time
+        type: string
+  VPPartner.Order.Dto.DelDemParameter:
+    type: object
+    properties:
+      productIds:
+        type: array
+        items:
+          format: int32
+          type: integer
+      cartId:
+        format: int32
+        type: integer
+  VPPartner.Order.Dto.ReturnDeclarationInfo:
+    required:
+    - message
+    type: object
+    properties:
+      returnedProducts:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.Order.Dto.ReturnDeclarationProductInfo"
+      message:
+        type: string
+      returnDemandReasons:
+        format: int32
+        enum:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        type: integer
+    example:
+      returnedProducts:
+      - productId: 123456
+        reasonId: 4
+      - productId: 1234567
+        reasonId: 3
+      message: Hi, I'm not satisfied with this product, can you rembuirse me please?
+      returnDemandReasons: 1
+  VPPartner.Order.Dto.ReturnDeclarationProductInfo:
+    type: object
+    properties:
+      productId:
+        format: int32
+        type: integer
+      reasonId:
+        format: int32
+        type: integer
+  VPPartner.Order.Dto.ReturnDeclarationInfoBase:
+    required:
+    - message
+    type: object
+    properties:
+      message:
+        type: string
+      returnDemandReasons:
+        format: int32
+        enum:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        type: integer
+    example:
+      message: Hi, I'm not satisfied with this product, can you rembuirse me please?
+      returnDemandReasons: 1
+  Front.PostSales.GarmProxy.FrontExposition.ModelObject.Address:
+    type: object
+    properties:
+      addressName:
+        type: string
+      firstName:
+        type: string
+      lastName:
+        type: string
+      companyName:
+        type: string
+      digiCode:
+        type: string
+      floor:
+        format: int32
+        type: integer
+      addressId:
+        format: int32
+        type: integer
+      address1:
+        type: string
+      address2:
+        type: string
+      address3:
+        type: string
+      zipCode:
+        type: string
+      phoneNumber:
+        type: string
+      email:
+        type: string
+      city:
+        type: string
+  VPPartner.Order.Dto.ReturnNPAI:
+    type: object
+    properties:
+      memberChoice:
+        format: int32
+        enum:
+        - 1
+        - 2
+        type: integer
+      deliveryAddress:
+        "$ref": "#/definitions/VPPartner.Order.Dto.MemberAddress"
+      useAsDefaultAddress:
+        type: boolean
+      isMobile:
+        type: boolean
+    example:
+      memberChoice: 2
+      deliveryAddress:
+        idAddress: 0
+        memberId: 0
+        addressName: ''
+        Number: 0
+        street: 1 NE Jackson St.
+        city: FooCity
+        country: FR
+        isDefault: false
+        isFavorite: false
+        floor: 0
+      useAsDefaultAddress: true
+      isMobile: false
+  VPPartner.Order.Dto.MemberAddress:
+    required:
+    - addressName
+    - firstName
+    - lastName
+    - street
+    - postalCode
+    - city
+    - country
+    - mobilePhone
+    type: object
+    properties:
+      idAddress:
+        format: int32
+        type: integer
+      memberId:
+        format: int32
+        type: integer
+      typeAddress:
+        type: string
+      addressName:
+        type: string
+      firstName:
+        type: string
+      lastName:
+        type: string
+      box:
+        type: string
+      Number:
+        format: int32
+        type: integer
+      street:
+        type: string
+      streetComplement:
+        type: string
+      address3:
+        type: string
+      postalCode:
+        type: string
+      city:
+        type: string
+      country:
+        type: string
+      mobilePhone:
+        type: string
+      companyName:
+        type: string
+      email:
+        type: string
+      language:
+        type: string
+      isDefault:
+        type: boolean
+      isFavorite:
+        type: boolean
+      floor:
+        format: int32
+        type: integer
+      digicode:
+        type: string
+  VPPartner.Dto.Logistic.ForceCancelation:
+    type: object
+    properties:
+      forceCancelReason:
+        format: int32
+        type: integer
+      forceCancelCausingParty:
+        format: int32
+        type: integer
+      forceCancelMoment:
+        format: int32
+        type: integer
+      items:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.Dto.Logistic.ItemCanceled"
+  VPPartner.Dto.Logistic.ItemCanceled:
+    type: object
+    properties:
+      productId:
+        format: int32
+        type: integer
+      productFamilyId:
+        format: int32
+        type: integer
+      cancelledQuantity:
+        format: int32
+        type: integer
+      cancelledTotalQuantity:
+        format: int32
+        type: integer
+  VPPartner.Dto.Logistic.ReturnedOrder:
+    type: object
+    properties:
+      returnDate:
+        format: date-time
+        type: string
+      items:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.Dto.Logistic.ItemReturned"
+  VPPartner.Dto.Logistic.ItemReturned:
+    type: object
+    properties:
+      productId:
+        format: int32
+        type: integer
+      productFamilyId:
+        format: int32
+        type: integer
+      returnedQuantity:
+        format: int32
+        type: integer
+      returnReason:
+        format: int32
+        type: integer
+      returnCausingParty:
+        format: int32
+        type: integer
+      returnedTotalQuantity:
+        format: int32
+        type: integer
+  VPPartner.Order.Dto.CreateVoucherRequestLight:
+    type: object
+    properties:
+      siteId:
+        format: int32
+        type: integer
+      count:
+        format: int32
+        type: integer
+      amount:
+        format: int32
+        type: integer
+      beneficiaryMemberId:
+        format: int32
+        type: integer
+      publicReason:
+        type: string
+      internalComments:
+        type: string
+      authorName:
+        type: string
+      authorId:
+        format: int32
+        type: integer
+      voucherTypeId:
+        format: int32
+        type: integer
+  VPPartner.Order.Dto.OrderCancel:
+    required:
+    - type
+    type: object
+    properties:
+      type:
+        type: string
+      items:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.Order.Dto.Item"
+  VPPartner.Order.Dto.Item:
+    type: object
+    properties:
+      productId:
+        format: int32
+        type: integer
+      quantity:
+        format: int32
+        type: integer
+  VPPartner.Order.Dto.PartnerOrders:
+    type: object
+    properties:
+      PartnerOrders:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.CallPartner.Dto.ExtendedOrder"
+  VPPartner.CallPartner.Dto.ExtendedOrder:
+    type: object
+    properties:
+      shippingFeeVAT:
+        format: double
+        type: number
+      invoiceAddress:
+        "$ref": "#/definitions/VPPartner.CallPartner.Dto.InvoiceAddress"
+      vpCartId:
+        format: int32
+        type: integer
+      vpTransactionId:
+        format: int32
+        type: integer
+      partnerOrderId:
+        format: int32
+        type: integer
+      originalOrderId:
+        format: int32
+        type: integer
+      partnerCartId:
+        format: int32
+        type: integer
+      partnerTransactionId:
+        format: int32
+        type: integer
+      partnerPaymentId:
+        format: int32
+        type: integer
+      vpPaymentId:
+        format: int32
+        type: integer
+      merchantId:
+        type: string
+      paymentDate:
+        format: date-time
+        type: string
+      paymentTypeId:
+        format: int32
+        type: integer
+      currencyId:
+        format: int32
+        type: integer
+      paymentProviderId:
+        format: int32
+        type: integer
+      pspMerchantId:
+        format: int32
+        type: integer
+      pspTransactionId:
+        type: string
+      pspId:
+        format: int32
+        type: integer
+      transactionInformations:
+        "$ref": "#/definitions/VPPartner.CallPartner.Dto.TransactionInformations"
+      partnerSiteId:
+        format: int32
+        type: integer
+      vpSiteId:
+        format: int32
+        type: integer
+      listOfCartIds:
+        type: array
+        items:
+          format: int32
+          type: integer
+      cultureIsoCode:
+        type: string
+      pspMerchantName:
+        type: string
+      orderId:
+        format: int32
+        type: integer
+      version:
+        format: int32
+        type: integer
+      status:
+        format: int32
+        enum:
+        - 0
+        - 1
+        - 10
+        - 11
+        - 20
+        - 21
+        - 30
+        - 40
+        - 50
+        - 54
+        - 55
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 65
+        - 70
+        - 75
+        - 76
+        - 80
+        - 99
+        type: integer
+      memberId:
+        format: int32
+        type: integer
+      operationId:
+        format: int32
+        type: integer
+      countryCode:
+        enum:
+        - BE
+        - NL
+        - FR
+        - DE
+        - ES
+        - IT
+        - EN
+        - AT
+        - LU
+        - GB
+        - AF
+        - ZA
+        - AX
+        - AL
+        - DZ
+        - AD
+        - AO
+        - AI
+        - AQ
+        - AG
+        - AN
+        - SA
+        - AR
+        - AM
+        - AW
+        - AU
+        - AZ
+        - BS
+        - BH
+        - BD
+        - BB
+        - BY
+        - BZ
+        - BJ
+        - BM
+        - BT
+        - BO
+        - BA
+        - BW
+        - BV
+        - BR
+        - BN
+        - BG
+        - BF
+        - BI
+        - KY
+        - KH
+        - CM
+        - CA
+        - CV
+        - CF
+        - CL
+        - CN
+        - CX
+        - CY
+        - CC
+        - CO
+        - KM
+        - CG
+        - CD
+        - CK
+        - KR
+        - KP
+        - CR
+        - CI
+        - HR
+        - CU
+        - DK
+        - DJ
+        - DO
+        - DM
+        - EG
+        - SV
+        - AE
+        - EC
+        - ER
+        - EE
+        - US
+        - ET
+        - FK
+        - FO
+        - FJ
+        - FI
+        - GA
+        - GM
+        - GE
+        - GS
+        - GH
+        - GI
+        - GR
+        - GD
+        - GL
+        - GP
+        - GU
+        - GT
+        - GG
+        - GN
+        - GW
+        - GQ
+        - GY
+        - GF
+        - HT
+        - HM
+        - HN
+        - HK
+        - HU
+        - IM
+        - UM
+        - VG
+        - VI
+        - IN
+        - ID
+        - IR
+        - IQ
+        - IE
+        - IS
+        - IL
+        - JM
+        - JP
+        - JE
+        - JO
+        - KZ
+        - KE
+        - KG
+        - KI
+        - KW
+        - LA
+        - LS
+        - LV
+        - LB
+        - LR
+        - LY
+        - LI
+        - LT
+        - MO
+        - MK
+        - MG
+        - MY
+        - MW
+        - MV
+        - ML
+        - MT
+        - MP
+        - MA
+        - MH
+        - MQ
+        - MU
+        - MR
+        - YT
+        - MX
+        - FM
+        - MD
+        - MC
+        - MN
+        - ME
+        - MS
+        - MZ
+        - MM
+        - NA
+        - NR
+        - NP
+        - NI
+        - NE
+        - NG
+        - NU
+        - NF
+        - 'NO'
+        - NC
+        - NZ
+        - IO
+        - OM
+        - UG
+        - UZ
+        - PK
+        - PW
+        - PS
+        - PA
+        - PG
+        - PY
+        - PE
+        - PH
+        - PN
+        - PL
+        - PF
+        - PR
+        - PT
+        - QA
+        - RE
+        - RO
+        - RU
+        - RW
+        - EH
+        - BL
+        - SH
+        - LC
+        - KN
+        - SM
+        - MF
+        - PM
+        - VA
+        - VC
+        - SB
+        - WS
+        - AS
+        - ST
+        - SN
+        - RS
+        - SC
+        - SL
+        - SG
+        - SK
+        - SI
+        - SO
+        - SD
+        - LK
+        - SE
+        - CH
+        - SR
+        - SJ
+        - SZ
+        - SY
+        - TJ
+        - TW
+        - TZ
+        - TD
+        - CZ
+        - TF
+        - TH
+        - TL
+        - TG
+        - TK
+        - TO
+        - TT
+        - TN
+        - TM
+        - TC
+        - TR
+        - TV
+        - UA
+        - UY
+        - VU
+        - VE
+        - VN
+        - WF
+        - YE
+        - ZM
+        - ZW
+        - CHF
+        - CHD
+        - CHI
+        - FRK
+        - DEK
+        - ESK
+        - ITK
+        - CHK
+        type: string
+      totalQuantity:
+        format: int32
+        type: integer
+      totalAmount:
+        format: double
+        type: number
+      items:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.CallPartner.Dto.CartDetail"
+      expirationTime:
+        format: date-time
+        type: string
+      shippingFee:
+        format: double
+        type: number
+      reductionAmount:
+        format: double
+        type: number
+      deliveryAddress:
+        "$ref": "#/definitions/VPPartner.CallPartner.Dto.DeliveryAddress"
+  VPPartner.CallPartner.Dto.InvoiceAddress:
+    type: object
+    properties:
+      lastName:
+        maxLength: 50
+        type: string
+      firstName:
+        maxLength: 50
+        type: string
+      street:
+        maxLength: 100
+        type: string
+      street2:
+        maxLength: 100
+        type: string
+      street3:
+        maxLength: 100
+        type: string
+      postalCode:
+        maxLength: 15
+        type: string
+      city:
+        maxLength: 50
+        type: string
+      mobilePhone:
+        maxLength: 50
+        type: string
+      email:
+        maxLength: 128
+        type: string
+      box:
+        type: string
+      number:
+        type: string
+      digicode:
+        maxLength: 20
+        type: string
+      floor:
+        format: int32
+        type: integer
+      companyName:
+        maxLength: 50
+        type: string
+      country:
+        type: string
+      state:
+        maxLength: 50
+        type: string
+      deliveryMode:
+        format: int32
+        type: integer
+      language:
+        type: string
+  VPPartner.CallPartner.Dto.TransactionInformations:
+    type: object
+    properties:
+      attributeId:
+        format: int32
+        type: integer
+      value:
+        type: string
+      paypalTransactionId:
+        type: string
+      o3DSSessionId:
+        type: string
+      maskedCardNumber:
+        type: string
+      cardToken:
+        type: string
+      cardExpirationDate:
+        type: string
+      cardCountry:
+        type: string
+      cardType:
+        type: string
+      paymentType:
+        type: string
+      authorizationCode:
+        type: string
+      responseCVV:
+        type: string
+      responseCode:
+        type: string
+      bankCardResponse:
+        type: string
+      transactionCertificate:
+        type: string
+      iPAddress:
+        type: string
+      cookieHash:
+        type: string
+      isWallet:
+        type: boolean
+      cardVirtualCVV:
+        type: string
+      is3DSecure:
+        type: boolean
+  VPPartner.CallPartner.Dto.IntegerList:
+    type: object
+    properties:
+      orderIds:
+        type: array
+        items:
+          format: int32
+          type: integer
+      orderAndCartIds:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.CallPartner.Dto.OrderShipping"
+      cartIds:
+        type: array
+        items:
+          format: int32
+          type: integer
+  VPPartner.Order.Dto.MemberIdList:
+    type: object
+    properties:
+      memberIds:
+        type: array
+        items:
+          format: int32
+          type: integer
+  ? VPPartner.Common.Dto.ActionResult`1[[System.Collections.Generic.IEnumerable`1[[VPPartner.Order.Dto.MemberOrders`1[[VPPartner.CallPartner.Dto.ExtendedOrderLight,
+    VPPartner.CallPartner.Dto, Version=1.0.47741.0, Culture=neutral, PublicKeyToken=null]],
+    VPPartner.Order.Dto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]],
+    System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
+  : type: object
+    properties:
+      errors:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.Common.Dto.ErrorResult"
+        readOnly: true
+      exec:
+        format: int64
+        type: integer
+      result:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.Order.Dto.MemberOrders`1[[VPPartner.CallPartner.Dto.ExtendedOrderLight,
+            VPPartner.CallPartner.Dto, Version=1.0.47741.0, Culture=neutral, PublicKeyToken=null]]"
+  VPPartner.Common.Dto.ErrorResult:
+    type: object
+    properties:
+      code:
+        format: int32
+        type: integer
+      message:
+        type: string
+  ? VPPartner.Order.Dto.MemberOrders`1[[VPPartner.CallPartner.Dto.ExtendedOrderLight,
+    VPPartner.CallPartner.Dto, Version=1.0.47741.0, Culture=neutral, PublicKeyToken=null]]
+  : type: object
+    properties:
+      memberId:
+        format: int32
+        type: integer
+      ordersDetailsList:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.CallPartner.Dto.ExtendedOrderLight"
+      memberErrors:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.Common.Dto.ErrorResult"
+      ordersIdsList:
+        type: array
+        items:
+          format: int32
+          type: integer
+  VPPartner.CallPartner.Dto.ExtendedOrderLight:
+    type: object
+    properties:
+      vpSiteId:
+        format: int32
+        type: integer
+      listOfCartIds:
+        type: array
+        items:
+          format: int32
+          type: integer
+      validationForFulfillment:
+        type: boolean
+      invoiceAddress:
+        "$ref": "#/definitions/VPPartner.CallPartner.Dto.DeliveryAddress"
+      orderId:
+        format: int32
+        type: integer
+      version:
+        format: int32
+        type: integer
+      status:
+        format: int32
+        enum:
+        - 0
+        - 1
+        - 10
+        - 11
+        - 20
+        - 21
+        - 30
+        - 40
+        - 50
+        - 54
+        - 55
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 65
+        - 70
+        - 75
+        - 76
+        - 80
+        - 99
+        type: integer
+      memberId:
+        format: int32
+        type: integer
+      operationId:
+        format: int32
+        type: integer
+      countryCode:
+        enum:
+        - BE
+        - NL
+        - FR
+        - DE
+        - ES
+        - IT
+        - EN
+        - AT
+        - LU
+        - GB
+        - AF
+        - ZA
+        - AX
+        - AL
+        - DZ
+        - AD
+        - AO
+        - AI
+        - AQ
+        - AG
+        - AN
+        - SA
+        - AR
+        - AM
+        - AW
+        - AU
+        - AZ
+        - BS
+        - BH
+        - BD
+        - BB
+        - BY
+        - BZ
+        - BJ
+        - BM
+        - BT
+        - BO
+        - BA
+        - BW
+        - BV
+        - BR
+        - BN
+        - BG
+        - BF
+        - BI
+        - KY
+        - KH
+        - CM
+        - CA
+        - CV
+        - CF
+        - CL
+        - CN
+        - CX
+        - CY
+        - CC
+        - CO
+        - KM
+        - CG
+        - CD
+        - CK
+        - KR
+        - KP
+        - CR
+        - CI
+        - HR
+        - CU
+        - DK
+        - DJ
+        - DO
+        - DM
+        - EG
+        - SV
+        - AE
+        - EC
+        - ER
+        - EE
+        - US
+        - ET
+        - FK
+        - FO
+        - FJ
+        - FI
+        - GA
+        - GM
+        - GE
+        - GS
+        - GH
+        - GI
+        - GR
+        - GD
+        - GL
+        - GP
+        - GU
+        - GT
+        - GG
+        - GN
+        - GW
+        - GQ
+        - GY
+        - GF
+        - HT
+        - HM
+        - HN
+        - HK
+        - HU
+        - IM
+        - UM
+        - VG
+        - VI
+        - IN
+        - ID
+        - IR
+        - IQ
+        - IE
+        - IS
+        - IL
+        - JM
+        - JP
+        - JE
+        - JO
+        - KZ
+        - KE
+        - KG
+        - KI
+        - KW
+        - LA
+        - LS
+        - LV
+        - LB
+        - LR
+        - LY
+        - LI
+        - LT
+        - MO
+        - MK
+        - MG
+        - MY
+        - MW
+        - MV
+        - ML
+        - MT
+        - MP
+        - MA
+        - MH
+        - MQ
+        - MU
+        - MR
+        - YT
+        - MX
+        - FM
+        - MD
+        - MC
+        - MN
+        - ME
+        - MS
+        - MZ
+        - MM
+        - NA
+        - NR
+        - NP
+        - NI
+        - NE
+        - NG
+        - NU
+        - NF
+        - 'NO'
+        - NC
+        - NZ
+        - IO
+        - OM
+        - UG
+        - UZ
+        - PK
+        - PW
+        - PS
+        - PA
+        - PG
+        - PY
+        - PE
+        - PH
+        - PN
+        - PL
+        - PF
+        - PR
+        - PT
+        - QA
+        - RE
+        - RO
+        - RU
+        - RW
+        - EH
+        - BL
+        - SH
+        - LC
+        - KN
+        - SM
+        - MF
+        - PM
+        - VA
+        - VC
+        - SB
+        - WS
+        - AS
+        - ST
+        - SN
+        - RS
+        - SC
+        - SL
+        - SG
+        - SK
+        - SI
+        - SO
+        - SD
+        - LK
+        - SE
+        - CH
+        - SR
+        - SJ
+        - SZ
+        - SY
+        - TJ
+        - TW
+        - TZ
+        - TD
+        - CZ
+        - TF
+        - TH
+        - TL
+        - TG
+        - TK
+        - TO
+        - TT
+        - TN
+        - TM
+        - TC
+        - TR
+        - TV
+        - UA
+        - UY
+        - VU
+        - VE
+        - VN
+        - WF
+        - YE
+        - ZM
+        - ZW
+        - CHF
+        - CHD
+        - CHI
+        - FRK
+        - DEK
+        - ESK
+        - ITK
+        - CHK
+        type: string
+      totalQuantity:
+        format: int32
+        type: integer
+      totalAmount:
+        format: double
+        type: number
+      items:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.CallPartner.Dto.CartDetail"
+      expirationTime:
+        format: date-time
+        type: string
+      shippingFee:
+        format: double
+        type: number
+      reductionAmount:
+        format: double
+        type: number
+      deliveryAddress:
+        "$ref": "#/definitions/VPPartner.CallPartner.Dto.DeliveryAddress"
+  VPPartner.Dto.Logistic.OperationGroups:
+    type: object
+    properties:
+      operationGroups:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.Dto.Logistic.OperationGroup"
+  VPPartner.Dto.Logistic.OperationGroup:
+    type: object
+    properties:
+      operationId:
+        format: int32
+        type: integer
+      nbrPallets:
+        format: int32
+        type: integer
+      nbrSingleBoxes:
+        format: int32
+        type: integer
+      pallets:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.Dto.Logistic.Pallet"
+      singleBoxes:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.Dto.Logistic.Boxe"
+  VPPartner.Dto.Logistic.Pallet:
+    type: object
+    properties:
+      palletId:
+        format: int32
+        type: integer
+      palletBarCode:
+        type: string
+      nbrBoxesOnPallet:
+        format: int32
+        type: integer
+      returnType:
+        type: string
+      boxes:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.Dto.Logistic.Boxe"
+  VPPartner.Dto.Logistic.Boxe:
+    type: object
+    properties:
+      operationId:
+        format: int32
+        type: integer
+      boxId:
+        format: int32
+        type: integer
+      boxBarCode:
+        type: string
+      nbrItemsInBox:
+        format: int32
+        type: integer
+      nbrSkusInBox:
+        format: int32
+        type: integer
+      returnType:
+        type: string
+      items:
+        type: array
+        items:
+          "$ref": "#/definitions/VPPartner.Dto.Logistic.ItemInfo"
+  VPPartner.Dto.Logistic.ItemInfo:
+    type: object
+    properties:
+      productId:
+        format: int32
+        type: integer
+      itemId:
+        format: int32
+        type: integer
+      itemBarCode:
+        type: string
+      condition:
+        type: string
+      quantity:
+        format: int32
+        type: integer
