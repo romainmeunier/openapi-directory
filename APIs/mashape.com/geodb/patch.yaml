@@ -1,7 +1,0 @@
-info:
-  x-logo:
-    url: 'https://raw.githubusercontent.com/wirefreethought/geodb-cities-api-docs/master/images/logo.png'
-    backgroundColor: '#FFFFFF'
-  x-apisguru-categories:
-    - developer_tools
-    - location
