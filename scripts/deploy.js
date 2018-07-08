@@ -18,13 +18,13 @@ var util = require('./util');
 sh.set('-e');
 sh.set('-v');
 
-sh.mkdir('deploy');
-sh.cp('resources/index.html', 'deploy/');
-sh.mkdir('deploy/v2');
+sh.mkdir('docs');
+sh.cp('resources/index.html', 'docs/');
+sh.mkdir('docs/v2');
 
 function deployDir(path) {
   assert(_.isString(path) && path[0] !== '/');
-  return Path.join('deploy/v2', path);
+  return Path.join('docs/v2', path);
 }
 
 function rootUrl(url) {
