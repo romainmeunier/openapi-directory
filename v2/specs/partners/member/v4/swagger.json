@@ -1,0 +1,1421 @@
+{
+  "swagger": "2.0",
+  "host": "member.dev.ptn.chrysalis.dc1.fr.vpgrp.io",
+  "info": {
+    "description": "",
+    "title": "VPPartner.Member.Api V4",
+    "version": "v4",
+    "x-origin": [
+      {
+        "format": "swagger",
+        "url": "http://member.dev.ptn.chrysalis.dc1.fr.vpgrp.io/swagger/v4/swagger.json",
+        "version": "2.0"
+      }
+    ],
+    "x-preferred": true,
+    "x-providerName": "partners",
+    "x-serviceName": "member"
+  },
+  "produces": null,
+  "paths": {
+    "/{partner}/member": {
+      "post": {
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "operationId": "ByPartnerMemberPost",
+        "parameters": [
+          {
+            "description": "The complete member.",
+            "in": "body",
+            "name": "member",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/VPPartner.Common.Dto.Member.CompleteMember"
+            }
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Adds the member or update.\r\nroute : api/Member/{partnerMemberId}/Update",
+        "tags": [
+          "Member"
+        ]
+      }
+    },
+    "/{partner}/member/Facebook/{facebookId}/{siteId}": {
+      "get": {
+        "consumes": [],
+        "operationId": "ByPartnerMemberFacebookByFacebookIdBySiteIdGet",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "facebookId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "siteId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      }
+    },
+    "/{partner}/member/search": {
+      "post": {
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "operationId": "ByPartnerMemberSearchPost",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "search",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/VPPartner.Member.Dto.MemberSearchModel"
+            }
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      }
+    },
+    "/{partner}/member/updatePassword/{memberId}": {
+      "post": {
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "operationId": "ByPartnerMemberUpdatePasswordByMemberIdPost",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "memberId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "memberPasswordModel",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/VPPartner.Common.Dto.Member.MemberPasswordModel"
+            }
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      }
+    },
+    "/{partner}/member/{PartnerMemberID}": {
+      "get": {
+        "consumes": [],
+        "operationId": "ByPartnerMemberByPartnerMemberIDGet",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "PartnerMemberID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      }
+    },
+    "/{partner}/member/{email}": {
+      "get": {
+        "consumes": [],
+        "operationId": "ByPartnerMemberByEmailGet",
+        "parameters": [
+          {
+            "description": "The email.",
+            "in": "path",
+            "name": "email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The partner member identifier.",
+            "in": "query",
+            "name": "PartnerMemberID",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Gets the member by e-mail or partnermemberid.",
+        "tags": [
+          "Member"
+        ]
+      }
+    },
+    "/{partner}/member/{memberID}/Addresses": {
+      "get": {
+        "consumes": [],
+        "operationId": "ByPartnerMemberByMemberIDAddressesGet",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "memberID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      }
+    },
+    "/{partner}/member/{memberID}/Attributes": {
+      "get": {
+        "consumes": [],
+        "operationId": "ByPartnerMemberByMemberIDAttributesGet",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "memberID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      }
+    },
+    "/{partner}/member/{memberID}/Facebook": {
+      "post": {
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "operationId": "ByPartnerMemberByMemberIDFacebookPost",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "memberId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "facebookId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      }
+    },
+    "/{partner}/member/{memberID}/Subscriptions": {
+      "get": {
+        "consumes": [],
+        "operationId": "ByPartnerMemberByMemberIDSubscriptionsGet",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "memberId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      },
+      "post": {
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "operationId": "ByPartnerMemberByMemberIDSubscriptionsPost",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "memberId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "attributes",
+            "required": false,
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/VPPartner.Common.Dto.Member.MemberSubscription"
+              },
+              "type": "array"
+            }
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      }
+    },
+    "/{partner}/member/{memberID}/address/create": {
+      "post": {
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "operationId": "ByPartnerMemberByMemberIDAddressCreatePost",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "memberID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "addresses",
+            "required": false,
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/VPPartner.Common.Dto.Member.MemberAddress"
+              },
+              "type": "array"
+            }
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      }
+    },
+    "/{partner}/member/{memberID}/address/update": {
+      "post": {
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "operationId": "ByPartnerMemberByMemberIDAddressUpdatePost",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "memberID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "addresses",
+            "required": false,
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/VPPartner.Common.Dto.Member.MemberAddress"
+              },
+              "type": "array"
+            }
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      }
+    },
+    "/{partner}/member/{memberID}/address/{addressID}": {
+      "delete": {
+        "consumes": [],
+        "operationId": "ByPartnerMemberByMemberIDAddressByAddressIDDelete",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "memberID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "addressID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      },
+      "get": {
+        "consumes": [],
+        "operationId": "ByPartnerMemberByMemberIDAddressByAddressIDGet",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "memberID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "addressID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      }
+    },
+    "/{partner}/member/{memberID}/attributes": {
+      "post": {
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "operationId": "ByPartnerMemberByMemberIDAttributesPost",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "memberID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "attributes",
+            "required": false,
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/VPPartner.Common.Dto.Member.MemberAttribute"
+              },
+              "type": "array"
+            }
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      }
+    },
+    "/{partner}/member/{memberId}/Facebook": {
+      "get": {
+        "consumes": [],
+        "operationId": "ByPartnerMemberByMemberIdFacebookGet",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "memberId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      }
+    },
+    "/{partner}/member/{memberId}/device/{deviceId}/authentification": {
+      "post": {
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "operationId": "ByPartnerMemberByMemberIdDeviceByDeviceIdAuthentificationPost",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "memberId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "deviceId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "memberDeviceAuthentification",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/VPPartner.Member.Dto.MemberDeviceAuthentification"
+            }
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      }
+    },
+    "/{partner}/member/{memberId}/device/{deviceId}/operation/{operationId}": {
+      "post": {
+        "consumes": [],
+        "operationId": "ByPartnerMemberByMemberIdDeviceByDeviceIdOperationByOperationIdPost",
+        "parameters": [
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "memberId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "deviceId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "format": "int32",
+            "in": "path",
+            "name": "operationId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "partner",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "partner token",
+            "in": "header",
+            "name": "Partner-Token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "Member"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "VPPartner.Common.Dto.Member.BaseMember": {
+      "properties": {
+        "accountStateId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "birthdayDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "civility": {
+          "type": "string"
+        },
+        "countryCode": {
+          "enum": [
+            "BE",
+            "NL",
+            "FR",
+            "DE",
+            "ES",
+            "IT",
+            "EN",
+            "AT",
+            "LU",
+            "GB",
+            "AF",
+            "ZA",
+            "AX",
+            "AL",
+            "DZ",
+            "AD",
+            "AO",
+            "AI",
+            "AQ",
+            "AG",
+            "AN",
+            "SA",
+            "AR",
+            "AM",
+            "AW",
+            "AU",
+            "AZ",
+            "BS",
+            "BH",
+            "BD",
+            "BB",
+            "BY",
+            "BZ",
+            "BJ",
+            "BM",
+            "BT",
+            "BO",
+            "BA",
+            "BW",
+            "BV",
+            "BR",
+            "BN",
+            "BG",
+            "BF",
+            "BI",
+            "KY",
+            "KH",
+            "CM",
+            "CA",
+            "CV",
+            "CF",
+            "CL",
+            "CN",
+            "CX",
+            "CY",
+            "CC",
+            "CO",
+            "KM",
+            "CG",
+            "CD",
+            "CK",
+            "KR",
+            "KP",
+            "CR",
+            "CI",
+            "HR",
+            "CU",
+            "DK",
+            "DJ",
+            "DO",
+            "DM",
+            "EG",
+            "SV",
+            "AE",
+            "EC",
+            "ER",
+            "EE",
+            "US",
+            "ET",
+            "FK",
+            "FO",
+            "FJ",
+            "FI",
+            "GA",
+            "GM",
+            "GE",
+            "GS",
+            "GH",
+            "GI",
+            "GR",
+            "GD",
+            "GL",
+            "GP",
+            "GU",
+            "GT",
+            "GG",
+            "GN",
+            "GW",
+            "GQ",
+            "GY",
+            "GF",
+            "HT",
+            "HM",
+            "HN",
+            "HK",
+            "HU",
+            "IM",
+            "UM",
+            "VG",
+            "VI",
+            "IN",
+            "ID",
+            "IR",
+            "IQ",
+            "IE",
+            "IS",
+            "IL",
+            "JM",
+            "JP",
+            "JE",
+            "JO",
+            "KZ",
+            "KE",
+            "KG",
+            "KI",
+            "KW",
+            "LA",
+            "LS",
+            "LV",
+            "LB",
+            "LR",
+            "LY",
+            "LI",
+            "LT",
+            "MO",
+            "MK",
+            "MG",
+            "MY",
+            "MW",
+            "MV",
+            "ML",
+            "MT",
+            "MP",
+            "MA",
+            "MH",
+            "MQ",
+            "MU",
+            "MR",
+            "YT",
+            "MX",
+            "FM",
+            "MD",
+            "MC",
+            "MN",
+            "ME",
+            "MS",
+            "MZ",
+            "MM",
+            "NA",
+            "NR",
+            "NP",
+            "NI",
+            "NE",
+            "NG",
+            "NU",
+            "NF",
+            "NO",
+            "NC",
+            "NZ",
+            "IO",
+            "OM",
+            "UG",
+            "UZ",
+            "PK",
+            "PW",
+            "PS",
+            "PA",
+            "PG",
+            "PY",
+            "PE",
+            "PH",
+            "PN",
+            "PL",
+            "PF",
+            "PR",
+            "PT",
+            "QA",
+            "RE",
+            "RO",
+            "RU",
+            "RW",
+            "EH",
+            "BL",
+            "SH",
+            "LC",
+            "KN",
+            "SM",
+            "MF",
+            "PM",
+            "VA",
+            "VC",
+            "SB",
+            "WS",
+            "AS",
+            "ST",
+            "SN",
+            "RS",
+            "SC",
+            "SL",
+            "SG",
+            "SK",
+            "SI",
+            "SO",
+            "SD",
+            "LK",
+            "SE",
+            "CH",
+            "SR",
+            "SJ",
+            "SZ",
+            "SY",
+            "TJ",
+            "TW",
+            "TZ",
+            "TD",
+            "CZ",
+            "TF",
+            "TH",
+            "TL",
+            "TG",
+            "TK",
+            "TO",
+            "TT",
+            "TN",
+            "TM",
+            "TC",
+            "TR",
+            "TV",
+            "UA",
+            "UY",
+            "VU",
+            "VE",
+            "VN",
+            "WF",
+            "YE",
+            "ZM",
+            "ZW",
+            "CHF",
+            "CHD",
+            "CHI",
+            "FRK",
+            "DEK",
+            "ESK",
+            "ITK",
+            "CHK"
+          ],
+          "type": "string"
+        },
+        "creationDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "cultureSiteId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "email": {
+          "type": "string"
+        },
+        "encryptedPassword": {
+          "type": "string"
+        },
+        "firstName": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "genderId": {
+          "format": "int32",
+          "maximum": 2,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "lastName": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "memberId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "mobile": {
+          "type": "string"
+        },
+        "modificationDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "otherPhone": {
+          "type": "string"
+        },
+        "partnerMemberId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "partnerSiteId": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "zipCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "civility",
+        "email",
+        "firstName",
+        "lastName",
+        "birthdayDate"
+      ],
+      "type": "object"
+    },
+    "VPPartner.Common.Dto.Member.CompleteMember": {
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/VPPartner.Common.Dto.Member.MemberAddress"
+        },
+        "attributes": {
+          "items": {
+            "$ref": "#/definitions/VPPartner.Common.Dto.Member.MemberAttribute"
+          },
+          "type": "array"
+        },
+        "baseMember": {
+          "$ref": "#/definitions/VPPartner.Common.Dto.Member.BaseMember"
+        },
+        "subscriptions": {
+          "items": {
+            "$ref": "#/definitions/VPPartner.Common.Dto.Member.MemberSubscription"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "baseMember"
+      ],
+      "type": "object"
+    },
+    "VPPartner.Common.Dto.Member.MemberAddress": {
+      "properties": {
+        "Number": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "address3": {
+          "type": "string"
+        },
+        "addressName": {
+          "type": "string"
+        },
+        "box": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "companyName": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "digicode": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "floor": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "idAddress": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "isDefault": {
+          "type": "boolean"
+        },
+        "isFavorite": {
+          "type": "boolean"
+        },
+        "language": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "memberId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "mobilePhone": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        },
+        "streetComplement": {
+          "type": "string"
+        },
+        "typeAddress": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "addressName",
+        "firstName",
+        "lastName",
+        "street",
+        "postalCode",
+        "city",
+        "country",
+        "mobilePhone"
+      ],
+      "type": "object"
+    },
+    "VPPartner.Common.Dto.Member.MemberAttribute": {
+      "properties": {
+        "keyName": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "VPPartner.Common.Dto.Member.MemberPasswordModel": {
+      "properties": {
+        "encryptedNewPassword": {
+          "type": "string"
+        },
+        "encryptedOldPassword": {
+          "type": "string"
+        },
+        "encryptedPassword": {
+          "type": "string"
+        },
+        "memberId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "partnerName": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "encryptedNewPassword"
+      ],
+      "type": "object"
+    },
+    "VPPartner.Common.Dto.Member.MemberSubscription": {
+      "properties": {
+        "isActive": {
+          "type": "boolean"
+        },
+        "isSentByEmail": {
+          "type": "boolean"
+        },
+        "isSentByNotification": {
+          "type": "boolean"
+        },
+        "typologySubDetailId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "unsubscribeReasonId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "VPPartner.Member.Dto.MemberDeviceAuthentification": {
+      "properties": {
+        "deviceUID": {
+          "type": "string"
+        },
+        "ipAddress": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "VPPartner.Member.Dto.MemberSearchModel": {
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "memberId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    }
+  }
+}

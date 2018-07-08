@@ -1,0 +1,288 @@
+{
+  "ebay.com:buy-browse": {
+    "preferred": "v1_beta.11.0",
+    "versions": {
+      "v1_beta.11.0": {
+        "info": {
+          "contact": {
+            "name": "eBay Inc,",
+            "x-twitter": "ebay"
+          },
+          "description": "The Browse API has the following resources: item_summary: Lets shoppers search for specific items by keyword, GTIN, category, product, or item aspects and refine the results by using filters. item: Lets you retrieve the details of a specific item or all the items in an item group, which is an item with variations such as color and size. This resource also provides a bridge between the eBay legacy APIs, such as Trading and Finding, and the RESTful APIs, such as Browse, which use different formats for the item IDs. You can retrieve the basic details of the item and the RESTful item ID using a legacy item ID.",
+          "license": {
+            "name": "eBay API License Agreement",
+            "url": "https://go.developer.ebay.com/api-license-agreement"
+          },
+          "title": "Browse",
+          "version": "v1_beta.11.0",
+          "x-apisguru-categories": [
+            "ecommerce"
+          ],
+          "x-logo": {
+            "backgroundColor": "#FFFFFF",
+            "url": "https://twitter.com/ebay/profile_image?size=original"
+          },
+          "x-origin": [
+            {
+              "format": "swagger",
+              "url": "https://developer.ebay.com/api-docs/master/buy/browse/openapi/2/buy_browse_v1_beta_oas2.json",
+              "version": "2.0"
+            }
+          ],
+          "x-preferred": true,
+          "x-providerName": "ebay.com",
+          "x-serviceName": "buy-browse"
+        },
+        "swaggerUrl": "https://romainmeunier.github.io/openapi-directory/v2/specs/ebay.com/buy-browse/v1_beta.11.0/swagger.json",
+        "swaggerYamlUrl": "https://romainmeunier.github.io/openapi-directory/v2/specs/ebay.com/buy-browse/v1_beta.11.0/swagger.yaml"
+      }
+    }
+  },
+  "ebay.com:buy-feed": {
+    "preferred": "v1_beta.7.0",
+    "versions": {
+      "v1_beta.7.0": {
+        "info": {
+          "contact": {
+            "name": "eBay Inc,",
+            "x-twitter": "ebay"
+          },
+          "description": "The Feed API provides the ability to download TSV_GZIP feed files containing eBay items and an hourly snapshot file of the items that have changed within an hour for a specific category and date.",
+          "license": {
+            "name": "eBay API License Agreement",
+            "url": "https://go.developer.ebay.com/api-license-agreement"
+          },
+          "title": "Item Feed Service",
+          "version": "v1_beta.7.0",
+          "x-apisguru-categories": [
+            "ecommerce"
+          ],
+          "x-logo": {
+            "backgroundColor": "#FFFFFF",
+            "url": "https://twitter.com/ebay/profile_image?size=original"
+          },
+          "x-origin": [
+            {
+              "format": "swagger",
+              "url": "https://developer.ebay.com/api-docs/master/buy/feed/openapi/2/buy_feed_v1_beta_oas2.json",
+              "version": "2.0"
+            }
+          ],
+          "x-preferred": true,
+          "x-providerName": "ebay.com",
+          "x-serviceName": "buy-feed"
+        },
+        "swaggerUrl": "https://romainmeunier.github.io/openapi-directory/v2/specs/ebay.com/buy-feed/v1_beta.7.0/swagger.json",
+        "swaggerYamlUrl": "https://romainmeunier.github.io/openapi-directory/v2/specs/ebay.com/buy-feed/v1_beta.7.0/swagger.yaml"
+      }
+    }
+  },
+  "ebay.com:buy-marketing": {
+    "preferred": "v1_beta.1.0",
+    "versions": {
+      "v1_beta.1.0": {
+        "info": {
+          "contact": {
+            "name": "eBay Inc,",
+            "x-twitter": "ebay"
+          },
+          "description": "The Marketing API retrieves eBay products based on a metric, such as Best Selling, as well as products that were also bought and also viewed.",
+          "license": {
+            "name": "eBay API License Agreement",
+            "url": "https://go.developer.ebay.com/api-license-agreement"
+          },
+          "title": "Buy Marketing",
+          "version": "v1_beta.1.0",
+          "x-apisguru-categories": [
+            "ecommerce"
+          ],
+          "x-logo": {
+            "backgroundColor": "#FFFFFF",
+            "url": "https://twitter.com/ebay/profile_image?size=original"
+          },
+          "x-origin": [
+            {
+              "format": "swagger",
+              "url": "https://developer.ebay.com/api-docs/master/buy/marketing/openapi/2/buy_marketing_v1_beta_oas2.json",
+              "version": "2.0"
+            }
+          ],
+          "x-preferred": true,
+          "x-providerName": "ebay.com",
+          "x-serviceName": "buy-marketing"
+        },
+        "swaggerUrl": "https://romainmeunier.github.io/openapi-directory/v2/specs/ebay.com/buy-marketing/v1_beta.1.0/swagger.json",
+        "swaggerYamlUrl": "https://romainmeunier.github.io/openapi-directory/v2/specs/ebay.com/buy-marketing/v1_beta.1.0/swagger.yaml"
+      }
+    }
+  },
+  "ebay.com:commerce-taxonomy": {
+    "preferred": "v1_beta.1.0",
+    "versions": {
+      "v1_beta.1.0": {
+        "info": {
+          "contact": {
+            "name": "eBay Inc,",
+            "x-twitter": "ebay"
+          },
+          "description": "Use the Taxonomy API to discover the most appropriate eBay categories under which sellers can offer inventory items for sale, and the most likely categories under which buyers can browse or search for items to purchase. In addition, the Taxonomy API provides information about the required and recommended category aspects to include in listings.",
+          "license": {
+            "name": "eBay API License Agreement",
+            "url": "https://go.developer.ebay.com/api-license-agreement"
+          },
+          "title": "Taxonomy",
+          "version": "v1_beta.1.0",
+          "x-apisguru-categories": [
+            "ecommerce"
+          ],
+          "x-logo": {
+            "backgroundColor": "#FFFFFF",
+            "url": "https://twitter.com/ebay/profile_image?size=original"
+          },
+          "x-origin": [
+            {
+              "format": "swagger",
+              "url": "https://developer.ebay.com/api-docs/master/commerce/taxonomy/openapi/2/commerce_taxonomy_v1_beta_oas2.json",
+              "version": "2.0"
+            }
+          ],
+          "x-preferred": true,
+          "x-providerName": "ebay.com",
+          "x-serviceName": "commerce-taxonomy"
+        },
+        "swaggerUrl": "https://romainmeunier.github.io/openapi-directory/v2/specs/ebay.com/commerce-taxonomy/v1_beta.1.0/swagger.json",
+        "swaggerYamlUrl": "https://romainmeunier.github.io/openapi-directory/v2/specs/ebay.com/commerce-taxonomy/v1_beta.1.0/swagger.yaml"
+      }
+    }
+  },
+  "ebay.com:sell-fulfillment": {
+    "preferred": "1.3.0",
+    "versions": {
+      "1.3.0": {
+        "info": {
+          "contact": {
+            "name": "eBay Inc.",
+            "x-twitter": "ebay"
+          },
+          "description": "Use the Fulfillment API to complete the process of packaging, addressing, handling, and shipping each order on behalf of the seller, in accordance with the payment method and timing specified at checkout.",
+          "license": {
+            "name": "eBay API License Agreement",
+            "url": "https://go.developer.ebay.com/api-license-agreement"
+          },
+          "title": "Fulfillment",
+          "version": "1.3.0",
+          "x-apisguru-categories": [
+            "ecommerce"
+          ],
+          "x-logo": {
+            "backgroundColor": "#FFFFFF",
+            "url": "https://twitter.com/ebay/profile_image?size=original"
+          },
+          "x-origin": [
+            {
+              "format": "swagger",
+              "url": "https://developer.ebay.com/api-docs/master/sell/fulfillment/openapi/2/sell_fulfillment_v1.json",
+              "version": "2.0"
+            }
+          ],
+          "x-preferred": true,
+          "x-providerName": "ebay.com",
+          "x-serviceName": "sell-fulfillment"
+        },
+        "swaggerUrl": "https://romainmeunier.github.io/openapi-directory/v2/specs/ebay.com/sell-fulfillment/1.3.0/swagger.json",
+        "swaggerYamlUrl": "https://romainmeunier.github.io/openapi-directory/v2/specs/ebay.com/sell-fulfillment/1.3.0/swagger.yaml"
+      }
+    }
+  },
+  "partners:member": {
+    "preferred": "v4",
+    "versions": {
+      "v4": {
+        "info": {
+          "description": "",
+          "title": "VPPartner.Member.Api V4",
+          "version": "v4",
+          "x-origin": [
+            {
+              "format": "swagger",
+              "url": "http://member.dev.ptn.chrysalis.dc1.fr.vpgrp.io/swagger/v4/swagger.json",
+              "version": "2.0"
+            }
+          ],
+          "x-preferred": true,
+          "x-providerName": "partners",
+          "x-serviceName": "member"
+        },
+        "swaggerUrl": "https://romainmeunier.github.io/openapi-directory/v2/specs/partners/member/v4/swagger.json",
+        "swaggerYamlUrl": "https://romainmeunier.github.io/openapi-directory/v2/specs/partners/member/v4/swagger.yaml"
+      }
+    }
+  },
+  "partners:order": {
+    "preferred": "v4",
+    "versions": {
+      "v4": {
+        "info": {
+          "description": "",
+          "title": "VPPartner.Order.Api V4",
+          "version": "v4",
+          "x-origin": [
+            {
+              "format": "swagger",
+              "url": "http://order.dev.ptn.chrysalis.dc1.fr.vpgrp.io/swagger/v4/swagger.json",
+              "version": "2.0"
+            }
+          ],
+          "x-preferred": true,
+          "x-providerName": "partners",
+          "x-serviceName": "order"
+        },
+        "swaggerUrl": "https://romainmeunier.github.io/openapi-directory/v2/specs/partners/order/v4/swagger.json",
+        "swaggerYamlUrl": "https://romainmeunier.github.io/openapi-directory/v2/specs/partners/order/v4/swagger.yaml"
+      }
+    }
+  },
+  "zoom.us": {
+    "preferred": "2.0.0",
+    "versions": {
+      "2.0.0": {
+        "externalDocs": {
+          "description": "Zoom API Documentation",
+          "url": "https://zoom.github.io/api"
+        },
+        "info": {
+          "contact": {
+            "email": "developer@zoom.us",
+            "name": "Zoom Developers",
+            "url": "https://developer.zoom.us/",
+            "x-twitter": "zoom_us"
+          },
+          "description": "API Description",
+          "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          },
+          "title": "Zoom",
+          "version": "2.0.0",
+          "x-apisguru-categories": [
+            "telecom"
+          ],
+          "x-logo": {
+            "url": "https://twitter.com/zoom_us/profile_image?size=original"
+          },
+          "x-origin": [
+            {
+              "format": "swagger",
+              "url": "https://raw.githubusercontent.com/zoom/api/master/openapi.v2.json",
+              "version": "2.0"
+            }
+          ],
+          "x-preferred": true,
+          "x-providerName": "zoom.us"
+        },
+        "swaggerUrl": "https://romainmeunier.github.io/openapi-directory/v2/specs/zoom.us/2.0.0/swagger.json",
+        "swaggerYamlUrl": "https://romainmeunier.github.io/openapi-directory/v2/specs/zoom.us/2.0.0/swagger.yaml"
+      }
+    }
+  }
+}
